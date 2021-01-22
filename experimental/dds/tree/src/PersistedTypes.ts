@@ -492,6 +492,8 @@ export const Change = {
 
 	clearPayload: (nodeToModify: NodeId): SetValue => ({
 		nodeToModify,
+		// Rationale: 'null' is used as a jsonable sentinel for the empty payload.
+		// eslint-disable-next-line no-null/no-null
 		payload: null,
 		type: ChangeType.SetValue,
 	}),
